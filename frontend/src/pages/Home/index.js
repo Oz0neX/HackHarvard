@@ -1,5 +1,5 @@
 import Nav from '../../components/Navbar'
-
+import everEase from '../../images/everease.png';
 function Home() {
   return (
     <div>

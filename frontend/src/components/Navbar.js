@@ -94,17 +94,35 @@ const NavbarLink = styled(Link)`
 	}
 `;
 
+const AIContainer = styled.div`
+  padding-top: 15px;
+  color: white;
+  width: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+`
+
+const AI = styled.div`
+  border-radius: 40px;
+  padding: 2px 10px;
+  background-color: ${FONT_COLOR.tertiary};
+  font-family: Spot Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+`
+
 function Nav() {
 	return (
 		<Navbar>
 			<LeftContainer>
 				<button
-					style={{ all: 'unset', cursor: 'pointer'}}
+					style={{ all: 'unset', cursor: 'pointer', display: 'flex'}}
 					onClick={() => {
 						window.location.href = '/';
 					}}
 				>
-					<image src={everEase} style={{width: '100px', height: '100px'}}></image>
+					<img src={everEase} style={{height: 'auto', width: '180px', marginTop: '10px'}}></img>
+          <AIContainer><AI>AI</AI></AIContainer>
 				</button>
 			</LeftContainer>
 			<RightContainer>

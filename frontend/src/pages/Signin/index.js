@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Nav from '../../components/Navbar'
 
 const LoginContainer = styled.div`
   display: flex;
@@ -88,7 +89,9 @@ const NewAcc = styled.button`
 
 function Login() {
   return (
-    <LoginContainer>
+    <div>
+      <Nav />
+      <LoginContainer>
       <TitleLogin>Log in</TitleLogin>
 
       <EmailPassBox>
@@ -104,6 +107,7 @@ function Login() {
       <NewAcc>Create new account</NewAcc>
       <ForgotSignUp>Or Sign Up Using</ForgotSignUp>
     </LoginContainer>
+    </div>
   )
 }
 
