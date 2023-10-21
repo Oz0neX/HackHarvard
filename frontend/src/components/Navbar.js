@@ -35,16 +35,17 @@ const Center = styled.div`
 	left: 50%;
 	transform: translateX(-50%);
   height: 50px;
-	padding: 7px 10px;
+	padding: 10px 10px;
 `;
 
 const HelpButton = styled.button`
 	all: unset;
 	padding: 0px 20px;
+	transform: translateY(8px);
 	color: white;
 	background-color: ${COLOR.secondary};
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
-	height: 100%;
+	height: 35px;
 	font-family: 'Lato';
 	font-weight: bold;
 	border-radius: 2px;
