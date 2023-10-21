@@ -1,3 +1,6 @@
+#Python Chatterbot
+
+
 #pip install pytz
 #pip install chatterbot==1.0.4
 
@@ -8,7 +11,7 @@ import numpy as np
 chatbot = ChatBot('MyChatBot')
 
 aggressive = ["yelling", "yell", "yells", "shout", "shouts", "shouting", "angry", "anger", "hitting", "hit", "hits"]
-agitation = ["anxious", "anxiety", "agitated", "agitation", "agitates", "agitate", "nervous","nervousness", "nervously"]
+agitation = ["anxious", "anxiety", "agitated", "agitation", "agitates", "agitate", "nervous","nervousness", "nervously", "aggravated", "aggravation"]
 
 
 def tester():
@@ -25,11 +28,11 @@ def examine(str = ""):
 trainer = ListTrainer(chatbot)
 trainer.train([
     "Yelling",
-    "Remain calm and be encouraging",
+    "When dealing with aggresive language or behavior in dementia, it is important to remain calm. You may need to identify yourself as it is possible that the patient does not recognize you. Try to use distraction, encouragement, and reassurance to bring their mind off of aggressive emotions. Try to be flexible if they are being uncooperative and angry.",
 ])
 trainer.train([
     "Nervousness",
-    "Use a gentle tone",
+    "When dealing with agitation in dementia, it's important to remain calm and use a soothing tone. Offer reassurance, and try redirecting their attention to a comforting activity or topic. Additionally, creating a structured routine can help reduce confusion and anxiety. Lastly, ensure the environment is calm and free from potential stressors. Remember, patience and understanding are key.",
 ])
 trainer.train([
     "Physical",
