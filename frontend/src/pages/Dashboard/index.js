@@ -1,6 +1,6 @@
 import Nav from '../../components/Navbar'
 import styled from 'styled-components';
-import conversation from './images/conversation.png';
+import conversation from '../../images/conversation.png';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -17,6 +17,9 @@ const LoginContainer = styled.div`
 const Left = styled.div`
   width: 50%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Right = styled.div`
@@ -86,12 +89,18 @@ const RedLogin = styled.button`
   text-align: center;
 `;
 
+const ConvoIMG = styled.img`
+  width: 380px;
+  height: 380px;
+  margin-bottom: 180px;
+`;
+
 function Dashboard() {
   return (
     <LoginContainer>
 
         <Left>
-          <img src="./HackHarvard/frontend/src/images/conversation.png" alt="conversation"/>
+          <ConvoIMG src={conversation} alt="conversation"/>
         </Left>
 
         <Right>
