@@ -1,5 +1,6 @@
 import Nav from '../../components/Navbar'
 import styled from 'styled-components';
+import conversation from './images/conversation.png';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -90,7 +91,7 @@ function Dashboard() {
     <LoginContainer>
 
         <Left>
-          
+          <img src="./HackHarvard/frontend/src/images/conversation.png" alt="conversation"/>
         </Left>
 
         <Right>
