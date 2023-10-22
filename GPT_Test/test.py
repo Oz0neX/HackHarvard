@@ -8,7 +8,7 @@ from langchain.llms import OpenAI
 from langchain.chains import ConversationalRetrievalChain
 
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = 'INSERT API KEY HERE'
 
 query = None
 
