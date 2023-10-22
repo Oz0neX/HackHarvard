@@ -41,11 +41,15 @@ const Center = styled.div`
 const HelpButton = styled.button`
 	all: unset;
 	padding: 0px 20px;
+	transform: translateY(8px);
 	color: white;
 	background-color: ${COLOR.secondary};
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 	height: 35px;
+<<<<<<< HEAD
 	/* transform: translateY(10px); */
+=======
+>>>>>>> 2f8f78d14c3fc00eba2a14228e826efdd8446861
 	font-family: 'Lato';
 	font-weight: bold;
 	border-radius: 10px;
