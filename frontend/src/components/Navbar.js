@@ -35,7 +35,7 @@ const Center = styled.div`
 	left: 50%;
 	transform: translateX(-50%);
   height: 50px;
-	padding: 7px 10px;
+	padding: 10px 10px;
 `;
 
 const HelpButton = styled.button`
@@ -44,25 +44,21 @@ const HelpButton = styled.button`
 	color: white;
 	background-color: ${COLOR.secondary};
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
-	height: 100%;
+	height: 35px;
+	/* transform: translateY(10px); */
 	font-family: 'Lato';
 	font-weight: bold;
-	border-radius: 2px;
-	margin: 8px 40px;
+	border-radius: 10px;
+	margin: 16px 40px;
+
 	&:hover {
-		animation-name: ${keyframes`
-			0% {
-				background-color: ${COLOR.secondary};
-				outline-width: 0px;
-			}
-			100% {
-				background-color: ${COLOR.secondaryHover};
-				outline-width: 1px;
-			}
-		`};
-		animation-duration: 0.1s;
-		background-color: ${COLOR.secondaryHover};
-		outline: 1px solid ${FONT_COLOR.primary};
+		transform: scale(1.03);
+		cursor: pointer;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
 		cursor: pointer;
 	}
 `;
@@ -85,12 +81,22 @@ const NavbarLink = styled(Link)`
 	&:hover {
 		padding-top: 2px;
 		padding-bottom: 2px;
-		border-radius: 20px;
 		outline: 1px solid black;
 		color: ${FONT_COLOR.primaryHover};
 		background-color: ${COLOR.primary}56;
 		animation-name: ${navbarLinkHover};
 		animation-duration: 0.2s;
+	}
+
+	&:hover {
+		transform: scale(1.03);
+		cursor: pointer;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
+		cursor: pointer;
 	}
 `;
 
