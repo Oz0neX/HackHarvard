@@ -152,7 +152,7 @@ function Dashboard() {
         </ResponseContainer>
         <Divider></Divider>
         <InputBox>
-          <UserInput onChange={(e) => {setMsg(e.target.value)}} onKeyDown={(e)=>{if (e.key=='Enter') {setMsg(e.target.value); handleSend()}}} placeholder="Send a message e.g. “Tips for calming an agitated loved one”"></UserInput>
+          <UserInput onChange={(e) => {setMsg(e.target.value)}} onKeyDown={(e)=>{if (e.key=='Enter') {setMsg(e.target.value); handleSend(); e.target.value=""}}} placeholder="Send a message e.g. “Tips for calming an agitated loved one”"></UserInput>
           <SendButton onClick={handleSend}>
 						<MdOutlineArrowCircleRight
 							style = {{
