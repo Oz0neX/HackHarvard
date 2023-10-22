@@ -74,18 +74,25 @@ const navbarLinkHover = () => {
 const NavbarLink = styled(Link)`
 	text-decoration: none;
   font-family: Spot Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-	padding: 0px 34px;
+	padding: 0px 24px;
 	margin: 0px 3px;
 	color: #111827;
 	&:hover {
 		padding-top: 2px;
 		padding-bottom: 2px;
-		border-radius: 20px;
+		border-radius: 0px;
 		outline: 1px solid black;
-		color: ${FONT_COLOR.primaryHover};
-		background-color: ${COLOR.primary}56;
-		animation-name: ${navbarLinkHover};
-		animation-duration: 0.2s;
+	}
+
+	&:hover {
+		transform: scale(1.03);
+		cursor: pointer;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
+		cursor: pointer;
 	}
 `;
 
@@ -132,9 +139,25 @@ function Nav() {
 				</div>
 			</RightContainer>
 			<Center>
-      <NavbarLink>OVERVIEW</NavbarLink>
-      <NavbarLink>CONTACT</NavbarLink>
-      <NavbarLink>HELP</NavbarLink>
+	<NavbarLink
+      		onClick={() => {
+			window.location.href = '/';
+		}}>
+			OVERVIEW
+	</NavbarLink>
+
+	<NavbarLink
+		onClick={() => {
+			window.location.href = '/contactus';
+		}}>
+		CONTACT</NavbarLink>
+
+	<NavbarLink
+		onClick={() => {
+			window.location.href = '/dashboard';
+		}}>
+		HELP
+	</NavbarLink>
 			</Center>
 		</Navbar>
 	);
