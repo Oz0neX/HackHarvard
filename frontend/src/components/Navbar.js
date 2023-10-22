@@ -46,23 +46,25 @@ const HelpButton = styled.button`
 	background-color: ${COLOR.secondary};
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 	height: 35px;
-<<<<<<< HEAD
-	/* transform: translateY(10px); */
-=======
->>>>>>> 2f8f78d14c3fc00eba2a14228e826efdd8446861
 	font-family: 'Lato';
 	font-weight: bold;
-	border-radius: 10px;
-	margin: 16px 40px;
-
+	border-radius: 2px;
+	margin: 8px 40px;
 	&:hover {
-		transform: scale(1.03);
-		cursor: pointer;
-	}
-
-	&:active {
-		box-shadow: none;
-		transform: translateY(0);
+		animation-name: ${keyframes`
+			0% {
+				background-color: ${COLOR.secondary};
+				outline-width: 0px;
+			}
+			100% {
+				background-color: ${COLOR.secondaryHover};
+				outline-width: 1px;
+			}
+		`};
+		animation-duration: 0.1s;
+		transform: translateY(8px);
+		background-color: ${COLOR.secondaryHover};
+		outline: 1px solid ${FONT_COLOR.primary};
 		cursor: pointer;
 	}
 `;
@@ -85,22 +87,12 @@ const NavbarLink = styled(Link)`
 	&:hover {
 		padding-top: 2px;
 		padding-bottom: 2px;
+		border-radius: 20px;
 		outline: 1px solid black;
 		color: ${FONT_COLOR.primaryHover};
 		background-color: ${COLOR.primary}56;
 		animation-name: ${navbarLinkHover};
 		animation-duration: 0.2s;
-	}
-
-	&:hover {
-		transform: scale(1.03);
-		cursor: pointer;
-	}
-
-	&:active {
-		box-shadow: none;
-		transform: translateY(0);
-		cursor: pointer;
 	}
 `;
 
@@ -112,14 +104,14 @@ const AIContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 10px;
-`
+`;
 
 const AI = styled.div`
   border-radius: 40px;
   padding: 2px 10px;
   background-color: ${FONT_COLOR.tertiary};
   font-family: Spot Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-`
+`;
 
 function Nav() {
 	return (
