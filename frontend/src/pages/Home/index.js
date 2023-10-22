@@ -9,6 +9,7 @@ const Landing = styled.div`
   height: 350px;
   padding: 130px 180px;
   margin: 30px 55px;
+  border-radius: 10px;
 `;
 
 const PoweredBy = styled.div`
@@ -16,6 +17,8 @@ const PoweredBy = styled.div`
   border-radius: 40px;
   padding: 2px 10px;
   margin-bottom: 5px;
+  color: white;
+  font-size: 10px;
   background-color: ${FONT_COLOR.tertiary};
   font-family: Spot Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 `;
@@ -41,28 +44,24 @@ const HelpButton = styled.button`
 	color: white;
   font-size: ${FONT_SIZE.lg};
 	background-color: ${COLOR.secondary};
+  box-shadow: rgba(100, 100, 111, 0.25) 0px 2px 2px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 	height: min-content;
 	font-family: 'Lato';
 	font-weight: bold;
-	border-radius: 2px;
+	border-radius: 10px;
 	margin: 8px 0px;
-	&:hover {
-		animation-name: ${keyframes`
-			0% {
-				background-color: ${COLOR.secondary};
-				outline-width: 0px;
-			}
-			100% {
-				background-color: ${COLOR.secondaryHover};
-				outline-width: 1px;
-			}
-		`};
-		animation-duration: 0.1s;
-		background-color: ${COLOR.secondaryHover};
-		outline: 1px solid ${FONT_COLOR.primary};
-		cursor: pointer;
-	}
+	
+  &:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+    cursor: pointer;
+  }
 `;
 
 const LearnMore = styled.button`
@@ -75,24 +74,20 @@ const LearnMore = styled.button`
 	height: min-content;
 	font-family: 'Lato';
 	font-weight: bold;
-	border-radius: 2px;
+	border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px;
 	margin: 8px 30px;
-	&:hover {
-		animation-name: ${keyframes`
-			0% {
-				background-color: #A1A1A1;
-				outline-width: 0px;
-			}
-			100% {
-				background-color: ${COLOR.primary};
-				outline-width: 1px;
-			}
-		`};
-		animation-duration: 0.1s;
-		background-color: ${COLOR.primary};
-		outline: 1px solid ${FONT_COLOR.primary};
-		cursor: pointer;
-	}
+	
+  &:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+    cursor: pointer;
+  }
 `;
 
 const Container = styled.div`
@@ -131,6 +126,7 @@ const ImgDescContainer = styled.div`
   background-color: ${COLOR.tertiary};
   width: 100%;
   margin: 80px 0px;
+  border-radius: 10px;
 `;
 
 const LadyInChair = styled.img`
@@ -138,6 +134,8 @@ const LadyInChair = styled.img`
   min-width: 50%;
   object-fit: cover;
   object-position: 40% 50%;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 `;
 
 const InnerContainer = styled.div`
@@ -146,10 +144,84 @@ const InnerContainer = styled.div`
 `;
 
 const Footer = styled.div`
-  background-color: ${COLOR.primary};
-  height: 120px;
-  width: calc(100%-60pxs);
-  padding: 30px;
+  display: block;
+  background-color: #95CEEE;
+  height: auto;
+  width: 100%;
+`;
+
+const TopLeft = styled.div`
+display: flex;
+flex-direction: column;
+  gap: 20px;
+  
+`;
+
+const TopRight = styled.div`
+  
+`;
+
+const Top = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 60px;
+  
+`;
+
+const SubForUpdates = styled.button`
+  background-color: #E7E7E7;
+  border-radius: 10px;
+  color: #FFFFFF;
+  width: 200px;
+  height: 30px;
+  border: 0px;
+
+  color: #738392;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px;
+  font-weight: bold;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+
+  &:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+`;
+
+const GreyLine = styled.div`
+  background-color: #565656;
+  height: 1px;
+  width: 80%;
+  margin-top: 15px;
+`;
+
+const Copyright = styled.div`
+  padding: 20px 60px;
+`;
+
+const Bottom = styled.div`
+  display: block;
+  align-items: center;
+  justify-items: center;
+`;
+
+const SubText = styled.div`
+font-size: 14px;
+font-weight: bold;
+color: #3E82A8;
+align-items: center;
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+`;
+
+const LatestNews = styled.div`
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+  color: #524F4F;
 `;
 
 function Home() {
@@ -189,7 +261,25 @@ function Home() {
         </ImgDescContainer>
       </Container>
 
-      <Footer></Footer>
+      <Footer>
+        <Top>
+          <TopLeft>
+            <SubText>SUBSCRIBE FOR UPDATES</SubText>
+            <LatestNews>Get the latest news and resources sent to your inbox.</LatestNews>
+          </TopLeft>
+
+          <TopRight>
+            <SubForUpdates>Subscribe for updates</SubForUpdates>
+          </TopRight>
+        </Top>
+
+        <Bottom>
+          <GreyLine></GreyLine>
+
+          <Copyright>© 2024 Everease, Inc. All rights reserved.</Copyright>
+        </Bottom>
+
+      </Footer>
     </div>
   );
 }
