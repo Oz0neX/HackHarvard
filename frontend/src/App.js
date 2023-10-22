@@ -1,4 +1,4 @@
-import { Home, Dashboard, NotFound, Signin } from './pages';
+import { Home, Dashboard, NotFound, Signin, ContactUs } from './pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/dashboard" element={<Dashboard />} />
 					<Route path="/signin" element={<Signin />} />
-					<Route path="/signup" element={<Signin signup />} />
+					<Route path="/contactus" element={<ContactUs signup />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
