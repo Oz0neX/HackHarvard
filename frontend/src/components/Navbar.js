@@ -41,30 +41,23 @@ const Center = styled.div`
 const HelpButton = styled.button`
 	all: unset;
 	padding: 0px 20px;
-	transform: translateY(8px);
 	color: white;
 	background-color: ${COLOR.secondary};
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 	height: 35px;
 	font-family: 'Lato';
 	font-weight: bold;
-	border-radius: 2px;
-	margin: 8px 40px;
+	border-radius: 10px;
+	margin: 16px 40px;
+	
 	&:hover {
-		animation-name: ${keyframes`
-			0% {
-				background-color: ${COLOR.secondary};
-				outline-width: 0px;
-			}
-			100% {
-				background-color: ${COLOR.secondaryHover};
-				outline-width: 1px;
-			}
-		`};
-		animation-duration: 0.1s;
-		transform: translateY(8px);
-		background-color: ${COLOR.secondaryHover};
-		outline: 1px solid ${FONT_COLOR.primary};
+		transform: scale(1.03);
+		cursor: pointer;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
 		cursor: pointer;
 	}
 `;
