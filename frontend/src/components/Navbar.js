@@ -156,7 +156,7 @@ function Nav() {
 		onClick={() => {
 			window.location.href = '/dashboard';
 		}}>
-		HELP
+		SIGN IN
 	</NavbarLink>
 			</Center>
 		</Navbar>
