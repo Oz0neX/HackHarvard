@@ -2,14 +2,18 @@ import Nav from '../../components/Navbar'
 import styled, { keyframes } from 'styled-components';
 import { FONT_COLOR, FONT_SIZE, COLOR } from '../../constants';
 import chair from '../../images/chair.png'
+import care from '../../images/careservice.jpg'
+import carenobg from '../../images/careservice.png'
 
 const Landing = styled.div`
-  background-color: ${COLOR.tertiary};
+  display: flex;
   width: calc(100% - 470px);
-  height: 350px;
-  padding: 130px 180px;
-  margin: 30px 55px;
+  height: 450px;
+  padding: 120px 180px;
+  padding-bottom: 50px;
+  margin: 40px 55px;
   border-radius: 10px;
+  margin-top: 15px;
 `;
 
 const PoweredBy = styled.div`
@@ -25,18 +29,22 @@ const PoweredBy = styled.div`
 
 const Title = styled.div`
   color: ${FONT_COLOR.quarternary};
-  font-size: 3.75em;
+  font-size: 3.25em;
   font-family: TT Firs Neue,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
   font-weight: 800;
+  line-height: 65px;
+  width: 740px;
+  margin-top: 15px;
 `;
 
 const TitleDescription = styled.div`
   margin: 35px 0px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
   font-size: ${FONT_SIZE.lg};
-  max-width: 800px;
-  line-height: 1.8em;
+  max-width: 500px;
   line-height: 30px;
+  color: #403F3F;
+  margin-bottom: 20px;
 `
 
 const HelpButton = styled.button`
@@ -114,8 +122,9 @@ const Subtitle = styled.div`
 
 const Description = styled.div`
   margin-top: 20px;
-	color: ${FONT_COLOR.quarternary};
+	color: #403F3F;
   font-size: ${FONT_SIZE.lg};
+  line-height: 30px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 `;
 
@@ -126,8 +135,10 @@ const ImgDescContainer = styled.div`
   height: 600px;
   background-color: ${COLOR.tertiary};
   width: 100%;
-  margin: 80px 0px;
+  margin: 60px 0px;
   border-radius: 10px;
+  color: #403F3F;
+  line-height: 50px;
 `;
 
 const LadyInChair = styled.img`
@@ -229,18 +240,41 @@ const LatestNews = styled.div`
   color: #524F4F;
 `;
 
+const LandingLeft = styled.div`
+  width: 50%;
+`;
+
+const LandingRight = styled.div`
+  width: 50%;
+`;
+
+const CareIMG = styled.img`
+  width: 700px;
+  height: auto;
+`;
+
 function Home() {
   return (
     <div>
       <Nav></Nav>
       <Landing>
-        <PoweredBy>Powered By GPT 3.5</PoweredBy>
-        <Title><xy style={{color: COLOR.primary}}>New to Caretaking?</xy> <br/>EverEase is here for you.</Title>
-        <TitleDescription>
-          Whether you are a family member, friend, or dedicated caregiver, you don’t have to navigate this path alone. You'll find a community that understands and a chatbot specialist ready to assist.
-        </TitleDescription>
-        <HelpButton>Get Help</HelpButton>
-        <LearnMore>Learn More</LearnMore>
+        <LandingLeft>
+          <PoweredBy>Powered By GPT 3.5</PoweredBy>
+          <Title><xy style={{color: COLOR.primary}}>New to Caretaking?</xy> <br/>EverEase is here for you.</Title>
+          <TitleDescription>
+            Whether you are a family member, friend, or dedicated caregiver, you don’t have to navigate this path alone. You'll find a community that understands and a chatbot specialist ready to assist.
+          </TitleDescription>
+          <HelpButton onClick={() => {
+							window.location.href = '/dashboard';
+						}}>Get Help</HelpButton>
+          <LearnMore onClick={() => {
+							window.location.href = '/contactus';
+						}}>Learn More</LearnMore>
+        </LandingLeft>
+
+        <LandingRight>
+          <CareIMG src={carenobg}/>
+        </LandingRight>
       </Landing>
       
       <Container>

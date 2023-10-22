@@ -39,7 +39,7 @@ const TitleLogin = styled.div`
 `;
 
 const SendUsMessage = styled.div`
-  font-size: 19px;
+  font-size: 18px;
   color: #403F3F;
   align-items: center;
   margin: 15px;
@@ -137,7 +137,9 @@ function Dashboard() {
               <StyledInput2 type="text"/>
             </EmailPassBox>
 
-            <RedLogin>Submit</RedLogin>
+            <RedLogin onClick={() => {
+							window.location.href = '/contactus';
+						}}>Submit</RedLogin>
           </Right>
 
       </LoginContainer>
