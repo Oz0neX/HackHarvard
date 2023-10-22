@@ -41,6 +41,12 @@ const MainCont = styled.div`
 
 const ResponseContainer = styled.div`
   width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin-top: 30px;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 
 const InputBox = styled.div`
@@ -101,13 +107,37 @@ function Dashboard() {
   const [msg, setMsg] = useState("");
   const [msgs, setMessages] = useState(sampledata);
   
-  function handleSend(x, AI) {
+  // Is there anything I can do to create a safer environment for my loved one?
+  function AIMessage(msgT) {
+    setMessages([...msgs, 
+      {
+        profilePicture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH3kZgJa6V-svDDKKVB884dvMqyuBjZjUfeA&usqp=CAU',
+        sender: 'Human',
+        messages: [msg],
+        id: msgs.length+1,
+      },{
+      profilePicture: 'https://www.w3schools.com/howto/img_avatar.png',
+      sender: 'AI',
+      messages: [msgT],
+      id: msgs.length+1,
+    }])
+  }
+
+  function handleSend() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://127.0.0.1:8000/snippets/?input=' + msg);
     setMessages([...msgs, {
       profilePicture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH3kZgJa6V-svDDKKVB884dvMqyuBjZjUfeA&usqp=CAU',
       sender: 'Human',
       messages: [msg],
       id: msgs.length+1,
     }])
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        AIMessage(JSON.parse(xhr.responseText)['result']);
+      }
+    };
+    xhr.send();
   }
 
   return (<div>
@@ -122,7 +152,7 @@ function Dashboard() {
         </ResponseContainer>
         <Divider></Divider>
         <InputBox>
-          <UserInput onChange={(e) => {setMsg(e.target.value)}} placeholder="Send a message e.g. “Tips for calming an agitated loved one”"></UserInput>
+          <UserInput onChange={(e) => {setMsg(e.target.value)}} onKeyDown={(e)=>{if (e.key=='Enter') {setMsg(e.target.value); handleSend()}}} placeholder="Send a message e.g. “Tips for calming an agitated loved one”"></UserInput>
           <SendButton onClick={handleSend}>
 						<MdOutlineArrowCircleRight
 							style = {{
