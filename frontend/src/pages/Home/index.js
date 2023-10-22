@@ -36,6 +36,7 @@ const TitleDescription = styled.div`
   font-size: ${FONT_SIZE.lg};
   max-width: 800px;
   line-height: 1.8em;
+  line-height: 30px;
 `
 
 const HelpButton = styled.button`
@@ -197,16 +198,20 @@ const SubForUpdates = styled.button`
 const GreyLine = styled.div`
   background-color: #565656;
   height: 1px;
-  width: 80%;
+  width: calc(100% - 120px);
   margin-top: 15px;
 `;
 
 const Copyright = styled.div`
   padding: 20px 60px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+  color: #828282;
+  font-size: 12px;
 `;
 
 const Bottom = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-items: center;
 `;
